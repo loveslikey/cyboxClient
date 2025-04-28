@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="mainViewContent" styleClass="aside-right" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.major.box.demo.MainViewContentController">
+    <VBox spacing="10.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <HBox alignment="CENTER_LEFT" styleClass="big-title">
+            <Label maxWidth="Infinity" styleClass="big-title-text" text="房间" HBox.hgrow="ALWAYS" />
+            <Hyperlink styleClass="more" text="更多+" />
+            <padding>
+                <Insets left="15" right="15" />
+            </padding>
+        </HBox>
+
+        <ScrollPane fitToWidth="true" styleClass="table-list-scrollpane" VBox.vgrow="ALWAYS">
+            <GridPane fx:id="roomGridPane" hgap="1" styleClass="table-list" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" percentWidth="10.0" />
+                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="25.0" />
+                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" percentWidth="25.0" />
+                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" percentWidth="15.0" />
+                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" percentWidth="15.0" />
+                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" percentWidth="10.0" />
+                </columnConstraints>
+
+                <!-- Table head row -->
+                <Pane styleClass="table-head-bg" GridPane.columnSpan="6" GridPane.rowIndex="0" />
+                <Label alignment="CENTER" styleClass="table-head-label" text="序号" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label alignment="CENTER" styleClass="table-head-label" text="名称" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label alignment="CENTER" styleClass="table-head-label" text="房间名称" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <Label alignment="CENTER" styleClass="table-head-label" text="房间人数" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Label alignment="CENTER" styleClass="table-head-label" text="房间状态" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+                <Label alignment="CENTER" styleClass="table-head-label" text="操作" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+
+                <!-- Row 1 -->
+                <StackPane GridPane.columnIndex="0" GridPane.columnSpan="6" GridPane.rowIndex="1">
+                    <HBox styleClass="row-bg" />
+                    <Region styleClass="glow-border" StackPane.alignment="CENTER_LEFT" />
+                </StackPane>
+                <Label styleClass="no" text="1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="红蓝对抗" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="房间XXXXXX" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label styleClass="num" text="1/2" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Label styleClass="status" text="准备中" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                <Button styleClass="btn-add" text="加入" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+
+                <!-- Row 2 -->
+                <StackPane GridPane.columnIndex="0" GridPane.columnSpan="6" GridPane.rowIndex="2">
+                    <HBox styleClass="row-bg" />
+                    <Region styleClass="glow-border" StackPane.alignment="CENTER_LEFT" />
+                </StackPane>
+                <Label styleClass="no" text="2" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label text="红蓝对抗" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="房间XXXXXX" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label styleClass="num" text="1/2" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <Label styleClass="status" text="准备中" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                <Button styleClass="btn-add" text="加入" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+
+                <!-- Row 3 -->
+                <StackPane GridPane.columnIndex="0" GridPane.columnSpan="6" GridPane.rowIndex="3">
+                    <HBox styleClass="row-bg" />
+                    <Region styleClass="glow-border" StackPane.alignment="CENTER_LEFT" />
+                </StackPane>
+                <Label styleClass="no" text="3" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label text="红蓝对抗" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="房间XXXXXX" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Label styleClass="num" text="1/2" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                <Label styleClass="status" text="准备中" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                <Button styleClass="btn-add" text="加入" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+
+                <!-- Row 4 -->
+                <StackPane GridPane.columnIndex="0" GridPane.columnSpan="6" GridPane.rowIndex="4">
+                    <HBox styleClass="row-bg" />
+                    <Region styleClass="glow-border" StackPane.alignment="CENTER_LEFT" />
+                </StackPane>
+                <Label styleClass="no" text="4" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label text="红蓝对抗" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="房间XXXXXX" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Label styleClass="num" text="1/2" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                <Label styleClass="status" text="准备中" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                <Button styleClass="btn-add" text="加入" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+
+                <rowConstraints>
+                    <RowConstraints minHeight="40" prefHeight="40" valignment="CENTER" vgrow="NEVER" />
+                    <RowConstraints minHeight="40" prefHeight="40" valignment="CENTER" vgrow="NEVER" />
+                    <RowConstraints minHeight="40" prefHeight="40" valignment="CENTER" vgrow="NEVER" />
+                    <RowConstraints minHeight="40" prefHeight="40" valignment="CENTER" vgrow="NEVER" />
+                    <RowConstraints minHeight="40" prefHeight="40" valignment="CENTER" vgrow="NEVER" />
+                </rowConstraints>
+            </GridPane>
+        </ScrollPane>
+
+        <HBox fx:id="paginationBox" alignment="CENTER_LEFT" spacing="5.0" styleClass="pages">
+            <children>
+                <Label text="共30条记录" />
+                <Button styleClass="pages-item, pages-item2" text="上一页" />
+                <Button styleClass="pages-item" text="1" />
+                <Button styleClass="pages-item" text="2" />
+                <Button styleClass="pages-item" text="3" />
+                <Button styleClass="pages-item, pages-item2" text="下一页" />
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </HBox>
+    </VBox>
+
+    <HBox alignment="CENTER_RIGHT" spacing="-10" styleClass="create-room" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="10.0">
+        <ImageView fitHeight="80.0" preserveRatio="true" styleClass="create">
+            <Image url="@../img/create.png" />
+            <HBox.margin>
+                <Insets bottom="40.0" />
+            </HBox.margin>
+        </ImageView>
+        <Button contentDisplay="GRAPHIC_ONLY" styleClass="start">
+            <graphic>
+                <ImageView fitHeight="100.0" preserveRatio="true">
+                    <Image url="@../img/start-text.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+    </HBox>
+</AnchorPane>

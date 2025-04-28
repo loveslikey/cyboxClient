@@ -1,0 +1,1231 @@
+/* General Reset/Defaults */
+.root {
+    /* Define base font size or other root properties if needed */
+    -fx-font-size: 14px; /* Example base size */
+    -fx-focus-color: transparent; /* Remove default focus rings */
+    -fx-faint-focus-color: transparent;
+}
+
+/* ScrollBar Styling (from ::-webkit-scrollbar) */
+.scroll-bar > .track-background {
+    -fx-background-color: #022f66;
+    -fx-background-insets: 0;
+    /* -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.3), 6, 0, 0, 0); /* Approximate inner shadow */
+}
+
+.scroll-bar > .thumb {
+    -fx-background-color: #2f7dcc;
+    -fx-background-insets: 1; /* Small inset for visual separation */
+    -fx-background-radius: 4; /* Approximate rounded corners */
+    /* -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.3), 6, 0, 0, 0); /* Approximate inner shadow */
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 8px;
+    -fx-padding: 0;
+}
+
+.scroll-bar:horizontal {
+    -fx-pref-height: 8px;
+    -fx-padding: 0;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-padding: 0; /* Hide default arrows */
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+
+/* Container (Applied to root BorderPane) */
+.container {
+    /* Background image for the whole window */
+    -fx-background-image: url("../img/bg.png");
+    -fx-background-size: cover; /* Stretch to cover the entire area */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+/* Header */
+.header {
+    -fx-pref-height: 50px;
+    -fx-padding: 0 5px 0 10px;
+    -fx-border-color: rgba(16, 148, 229, 0.5) transparent transparent transparent; /* Bottom border */
+    -fx-border-width: 0 0 1px 0;
+    -fx-background-image: url("../img/header.png"); /* Header background */
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-alignment: center-left; /* Default alignment for AnchorPane content */
+}
+
+.h-left {
+    /* Spacing is handled by HBox spacing attribute in FXML */
+    -fx-alignment: center-left;
+}
+
+.h-logo {
+    -fx-alignment: center-left;
+}
+.h-logo-text {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.h-btn {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-content-display: center;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    /* Remove default button padding/backgrounds */
+
+}
+.h-btn:hover {
+    -fx-background-image: url("../img/hBtn-bg.png");
+    -fx-background-size: contain; /* Or cover/100% 100% depending on image */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+.h-btn.h-btn-close:hover {
+    -fx-background-image: url("../img/hBtn-bg2.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+/* Smaller header buttons (settings, model) */
+.h-btn-min {
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-min-width: 30px; /* Ensure size */
+    -fx-min-height: 30px;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-background-image: url("../img/icon-setting-bg.png"); /* Default bg */
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    /* Remove default button styling */
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+}
+.h-btn-min.h-btn-green {
+    -fx-background-image: url("../img/icon-model-bg.png"); /* Green button bg */
+}
+
+/* User button styling */
+.h-btn-user {
+    -fx-pref-height: 30px;
+    -fx-padding: 0 12px;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-border-color: rgba(0, 170, 255, 0.6);
+    -fx-border-width: 1px;
+    -fx-background-color: rgba(0, 69, 112, 0.6);
+    -fx-effect: innershadow(gaussian, rgba(85, 181, 255, 0.6), 8, 0, 0, 0); /* Approximate inset shadow */
+    -fx-cursor: hand;
+    /* Style for the Label inside */
+}
+.h-btn-user .label {
+    -fx-text-fill: white;
+}
+/* Style for the MenuButton arrow region if needed */
+.h-btn-user > .arrow-button {
+    -fx-padding: 0;
+}
+.h-btn-user > .arrow-button .arrow {
+    -fx-background-color: transparent; /* Hide default arrow */
+}
+
+
+.h-news {
+    -fx-alignment: center-left;
+}
+.h-news .hyperlink { /* Style for the Hyperlink */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-color: transparent; /* Remove default underline */
+}
+.h-news .hyperlink:hover {
+    -fx-underline: true;
+}
+
+.h-menu {
+    -fx-alignment: center-right;
+}
+
+.h-tool {
+    -fx-alignment: center-right;
+}
+
+
+/* Footer */
+.footer {
+    -fx-pref-height: 40px;
+    -fx-alignment: center-left;
+    -fx-border-color: rgba(16, 148, 229, 0.5) transparent transparent transparent; /* Top border */
+    -fx-border-width: 1px 0 0 0;
+    -fx-background-image: url("../img/footer.png"); /* Footer background */
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.footer-icon {
+    -fx-alignment: center-left;
+    -fx-padding: 0 10px;
+}
+.footer-icon .icon {
+    /* Style ImageView if needed */
+}
+.footer-icon .dot {
+    -fx-fill: #f44336; /* 使用-fx-fill而不是-fx-background-color */
+    -fx-translate-x: 5; /* 调整位置 */
+    -fx-translate-y: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1); /* 可选：添加轻微阴影效果 */
+}
+
+.footer-text {
+    -fx-alignment: center-left;
+}
+.footer-text .label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bbe0ff;
+}
+
+/* Body */
+.body {
+    /* Spacing handled by HBox in FXML */
+}
+
+/* Aside Left */
+.aside-left {
+    -fx-pref-width: 420px; /* Fixed width */
+    -fx-background-color: rgba(0, 26, 69, 0.2);
+    -fx-effect: innershadow(gaussian, rgba(21, 183, 236, 0.1), 30, 0, 0, 0); /* Approximate inset shadow */
+    -fx-border-color: transparent rgba(16, 148, 229, 0.5) transparent rgba(16, 148, 229, 0.5); /* Left and Right borders */
+    -fx-border-width: 0 1px 0 1px;
+}
+
+.aside-left-top {
+    -fx-padding: 0px 0px 0px 10px ;
+    -fx-alignment: center-left;
+}
+.aside-left-top .title { /* Style for the Label */
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-padding: 0 10px;
+    -fx-pref-height: 40px;
+    -fx-background-color: linear-gradient(from 0% 100% to 0% 0%, rgba(1, 20, 42, 0.77) 0%, rgba(7, 61, 120, 0.77) 100%);
+    -fx-border-color: rgb(23, 106, 170);
+    -fx-border-width: 1px;
+    -fx-effect: innershadow(gaussian, rgba(2, 148, 227, 0.6), 30, 0, 0, 0); /* Approximate inset shadow */
+}
+.aside-left-top .icon-button { /* Style for the Button containing the icon */
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px;
+}
+
+/* Aside Left Bottom (ScrollPane) */
+.aside-left-bottom {
+    -fx-background-color: transparent; /* ScrollPane itself is transparent */
+    -fx-hbar-policy: NEVER; /* Hide horizontal scroll bar */
+    -fx-vbar-policy: AS_NEEDED;
+}
+.aside-left-bottom > .viewport { /* Content viewport */
+    -fx-background-color: transparent;
+}
+
+.scene-group {
+    /* Group container */
+}
+
+.scene-title {
+    -fx-pref-height: 35px;
+    -fx-padding: 0 10px;
+    -fx-alignment: center-left;
+    -fx-background-color: linear-gradient(to right, rgba(10, 139, 212, 0.3), rgba(0, 11, 17, 0));
+}
+.scene-title .label {
+    -fx-text-fill: #bbe0ff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+.scene-title .image-view { /* Style the icon if needed */
+    -fx-cursor: hand;
+}
+
+.scene-list {
+    -fx-padding: 10px 10px 0 10px; /* Padding for the list container */
+}
+.scene-list.hide {
+    /* Visibility/Managed handled in FXML for simplicity */
+}
+
+.scene-item {
+    -fx-padding: 10px 0 10px 10px;
+    -fx-background-color: linear-gradient(to right, rgba(10, 139, 212, 0.3), rgba(0, 11, 17, 0));
+    -fx-alignment: center-left;
+    /* Transition equivalent is handled by JavaFX Animations if needed, not pure CSS */
+}
+.scene-item:hover {
+    -fx-background-color: linear-gradient(to right, rgba(11, 171, 212, 0.5), rgba(11, 171, 212, 0.1));
+}
+
+.scene-item .img-box { /* Style for the ImageView */
+    -fx-border-color: #1e75b0;
+    -fx-border-width: 1px;
+    /* Overflow: hidden equivalent requires clipping, often set on the node itself */
+    /* Example: rectangle clip based on size */
+    /* -fx-clip: M 0 0 L 110 0 L 110 80 L 0 80 Z; */
+}
+/* Update overlay needs StackPane in FXML */
+.scene-item .update {
+    /* -fx-background-image: url("../img/update.png"); */
+    -fx-background-size: 100% 100%;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-pref-width: 55px;
+    -fx-pref-height: 22px;
+    -fx-alignment: center;
+}
+
+.scene-item .text-box {
+    -fx-padding: 0 10px; /* Add padding between image and text */
+}
+.scene-item .text-box .h5 { /* Style for title Label */
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bolder ;
+    /* Ellipsis/wrapping handled by Label properties or Text node */
+}
+.scene-item .text-box .textContent { /* Style for description Text node */
+    -fx-padding:5px 0px 0px 0px ;
+    -fx-font-size: 12px;
+    -fx-fill: #bbe0ff; /* Use -fx-fill for Text node */
+    /* Line clamp not directly supported in CSS, requires calculation or custom node */
+}
+
+.scene-item .tags {
+    -fx-alignment: center-left;
+    -fx-padding: 3px 0 0 0;
+}
+.scene-item .tags .label {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-padding: 1px 5px;
+    -fx-background-image: url("../img/tagBg.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+}
+
+.scene-item .btn { /* Style for the "立即推演" button */
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-min-width: 100px;
+    -fx-min-height: 40px;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 5px 0; /* Adjust padding if needed */
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-image: url("../img/ty-btn1.png");
+    -fx-background-size: contain; /* Or 100% 100% */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-cursor: hand;
+}
+.scene-item .btn:hover {
+    -fx-text-fill: #4affff;
+    -fx-background-image: url("../img/ty-btn2.png");
+}
+
+/* Detail Popup on hover - Not handled by this basic CSS, requires code */
+.detail {
+    /* ... styles for the popup if it were a standard node ... */
+}
+
+
+/* Aside Right */
+.aside-right {
+    -fx-padding: 10px 10px 10px 0; /* Original CSS had padding: 10px 10px 10px 0; */
+}
+
+.big-title {
+    -fx-pref-height: 40px;
+    -fx-background-image: url("../img/bigTitle.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-alignment: center-left;
+    /* padding set in FXML */
+}
+.big-title-text { /* Style for the "房间" Label */
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.big-title .more { /* Style for the Hyperlink */
+    -fx-font-size: 15px;
+    -fx-text-fill: #bbe0ff;
+    -fx-font-weight: normal;
+    -fx-border-color: transparent;
+}
+.big-title .more:hover {
+    -fx-underline: true;
+}
+
+/* 滚动面板样式 */
+/* 滚动面板样式 */
+.table-list-scrollpane {
+    -fx-background-color: transparent;
+    -fx-hbar-policy: NEVER;
+    -fx-vbar-policy: AS_NEEDED;
+    -fx-padding: 0;
+}
+
+.table-list-scrollpane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* 表格基本样式 */
+.table-list {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* 表头背景 */
+.table-head-bg {
+    -fx-background-image: url("../img/table-head.png");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-height: 40px;
+    -fx-min-height: 40px;
+}
+
+/* 表头标签样式 */
+.table-head-label {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-alignment: center;
+}
+
+/* 发光边框样式 */
+.glow-border {
+    -fx-background-color: #00eaff;
+    -fx-min-width: 4px;
+    -fx-pref-width: 4px;
+    -fx-max-width: 4px; /* 确保固定宽度 */
+    -fx-min-height: 40px;
+}
+
+/* 行背景样式 */
+.row-bg {
+    -fx-background-image: url("../img/table-row.png");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-height: 40px;
+    -fx-min-height: 40px;
+}
+
+/* 左侧蓝色边框 */
+.left-border {
+    -fx-border-color: #00eaff transparent transparent transparent;
+    -fx-border-width: 0 0 0 4px;
+    -fx-pref-height: 40px;
+    -fx-min-height: 40px;
+}
+
+/* 单元格通用样式 */
+.table-list Label {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-alignment: center;
+}
+
+
+/* 序号样式 */
+.no {
+    -fx-background-image: url("../img/no.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-min-width: 27px;
+    -fx-min-height: 18px;
+}
+
+/* 人数样式 */
+.num {
+    -fx-text-fill: #00ff00;
+}
+
+
+/* 加入按钮样式 */
+.btn-add {
+    -fx-background-image: url("../img/btn-add.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-min-width: 70px;
+    -fx-min-height: 30px;
+    -fx-cursor: hand;
+}
+
+.table-list .num {
+    -fx-text-fill: #33ff77; /* Green text */
+}
+.table-list .num2 {
+    -fx-text-fill: #ff4c4c; /* Red text */
+}
+.table-list .status {
+    -fx-font-size: 12px;
+    -fx-pref-width: 52px;
+    -fx-pref-height: 22px;
+    -fx-alignment: center;
+    -fx-background-image: url("../img/status.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-color: transparent;
+    -fx-text-fill: white; /* Or appropriate color */
+}
+.table-list .status-started {
+    /* Add different background/text color if needed for started status */
+    /* -fx-background-image: url("../img/status-started.png"); */
+    /* -fx-text-fill: yellow; */
+}
+
+.table-list .btn-add {
+    -fx-pref-width: 81px;
+    -fx-pref-height: 33px;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-background-image: url("../img/btn-add.png");
+    -fx-background-size: contain; /* Or 100% 100% */
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-cursor: hand;
+}
+.table-list .btn-not {
+    -fx-background-image: url("../img/btn-not.png");
+    -fx-cursor: default; /* Not-allowed cursor */
+    -fx-opacity: 0.7; /* Make it look disabled */
+}
+
+/* Pagination */
+.pages {
+    -fx-alignment: center-left;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-pref-height: 30px;
+}
+.pages .label {
+    -fx-text-fill: white;
+    -fx-padding: 0 15px 0 0; /* Right padding for record count */
+}
+
+.pages-item {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 30px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-background-image: url("../img/pageBg1.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+.pages-item:hover {
+    -fx-background-image: url("../img/pageBg1-act.png");
+}
+
+.pages-item2 {
+    -fx-pref-width: 73px;
+    -fx-background-image: url("../img/pageBg2.png");
+}
+.pages-item2:hover {
+    -fx-background-image: url("../img/pageBg2-act.png");
+}
+
+/* Create Room / Start Engine */
+.create-room {
+    /* Positioned by AnchorPane in FXML */
+    -fx-alignment: bottom-right;
+}
+.create-room .create { /* ImageView */
+    -fx-cursor: hand;
+}
+.create-room .start { /* Button */
+    -fx-pref-width: 176px; /* Match size for background */
+    -fx-pref-height: 176px;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-background-image: url("../img/start-engine.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-cursor: hand;
+}
+.create-room .start:hover {
+    -fx-background-image: url("../img/start-engine-act.gif");
+}
+
+/* Hidden Settings Layer - Basic Styling (if needed as placeholder) */
+.layer-fixed {
+    -fx-background-color: rgba(0, 34, 69, 0.95);
+    -fx-border-color: #09bde5;
+    -fx-border-width: 1px;
+    -fx-effect: innershadow(gaussian, rgba(0, 189, 252, 0.5), 20, 0, 0, 0),
+    dropshadow(gaussian, rgba(0, 189, 252, 0.15), 10, 0, 0, 0); /* Combined approx shadow */
+}
+.layer-fixed.hidden {
+    /* Visibility handled in FXML/code */
+}
+
+.layer-head {
+    -fx-pref-height: 40px;
+    -fx-padding: 0 20px;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-image: url("../img/layer-head.png");
+    -fx-background-size: 100% 100%;
+    -fx-border-color: transparent transparent rgba(16, 148, 229, 0.5) transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-alignment: center-left;
+}
+.layer-head .label { /* If text is in Label */
+    -fx-text-fill: white;
+}
+.layer-head .close-button { /* Style for the close button if added */
+    -fx-cursor: hand;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* etc. for rest of settings layer styles if needed */
+
+/* ListView Specific Styles */
+
+/* Search & Button Tools */
+.list-tool {
+    -fx-padding: 0 0 10px 0;
+}
+
+.search {
+    -fx-background-image: url("../img/searchBg.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 280px;
+    -fx-pref-height: 35px;
+    -fx-alignment: center-left;
+}
+
+.search-input {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 0 15px;
+    -fx-pref-height: 35px;
+}
+
+.search-input .text {
+    -fx-fill: white;
+}
+
+.search-input .prompt-text {
+    -fx-fill: rgba(255, 255, 255, 0.8);
+}
+
+.search-btn {
+    -fx-background-color: transparent;
+    -fx-pref-width: 35px;
+    -fx-pref-height: 35px;
+    -fx-padding: 0;
+    -fx-content-display: graphic-only;
+    -fx-cursor: hand;
+}
+
+.btn-box {
+    -fx-alignment: center-right;
+}
+
+/* List Items */
+.all-list-scrollpane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.all-list-scrollpane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.all-list {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.all-item {
+    -fx-padding: 15px;
+    -fx-spacing: 10;
+    -fx-background-image: url("../img/all-item.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.all-item .img-box {
+    -fx-border-color: #1e75b0;
+    -fx-border-width: 1px;
+    -fx-margin-right: 10px;
+}
+
+.all-item .text-box {
+    -fx-padding: 0 10px;
+}
+
+.all-item .text-box .h5 {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.all-item .text-box .textContent {
+    -fx-fill: #bbe0ff;
+    -fx-font-size: 14px;
+}
+
+.all-item .tags {
+    -fx-padding: 5px 0 0 0;
+}
+
+.all-item .tags Label {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-padding: 1px 5px;
+    -fx-background-image: url("../img/tagBg.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.all-btn {
+    -fx-spacing: 10;
+}
+
+/* Custom Buttons */
+.aBtn {
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+
+.aBtn-primary {
+    -fx-background-image: url("../img/btn-primary.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.aBtn-success {
+    -fx-background-image: url("../img/btn-success.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.aBtn-danger {
+    -fx-background-image: url("../img/btn-danger.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+/* HomeView 特有的样式 */
+
+/* 顶部标签栏和搜索框 */
+.aside-box {
+    -fx-border-color: rgba(16, 148, 229, 0.5) transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 0 0 10px 0;
+}
+
+.h-tabs {
+    -fx-alignment: center-left;
+}
+
+.h-tabs-item {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-pref-width: 125px;
+    -fx-pref-height: 40px;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.h-tabs-item.active, .h-tabs-item:hover {
+    -fx-background-image: url("../img/hTabs.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+/* 主体区域 */
+.home-main {
+    -fx-padding: 0;
+}
+
+.home-item {
+    -fx-background-image: url("../img/home-item.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.home-title {
+    -fx-background-image: url("../img/home-title.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 20px;
+    -fx-pref-height: 38px;
+    -fx-alignment: center-left;
+    -fx-spacing: 5;
+}
+
+/* 新闻列表 */
+.news-scroll, .hot-scroll, .logs-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.news-scroll > .viewport, .hot-scroll > .viewport, .logs-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.news-list {
+    -fx-padding: 10px 20px;
+}
+
+.news-item {
+    -fx-alignment: center;
+    -fx-padding: 0 0 1px 0;
+    -fx-pref-height: 35px;
+    -fx-border-color: transparent transparent rgba(187, 224, 255, 0.2) transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-style: dashed;
+    -fx-cursor: hand;
+}
+
+.news-item:hover .news-title, .news-item:hover .news-date {
+    -fx-text-fill: #0ff;
+}
+
+.news-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}
+
+.news-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bbe0ff;
+    -fx-padding: 0 0 0 10px;
+}
+
+/* 热门列表 */
+.hot-list {
+    -fx-padding: 10px 20px;
+}
+
+.hot-item {
+    -fx-padding: 10px 0;
+    -fx-border-color: transparent transparent rgba(187, 224, 255, 0.2) transparent;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-style: dashed;
+    -fx-cursor: hand;
+}
+
+.hot-item:hover .hot-title, .hot-item:hover .hot-creator {
+    -fx-text-fill: #0ff;
+}
+
+.hot-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.hot-info {
+    -fx-padding: 5px 0 0 0;
+}
+
+.hot-creator {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bbe0ff;
+}
+
+.hot-plays {
+    -fx-font-size: 14px;
+    -fx-text-fill: #0ff;
+    -fx-padding: 0 0 0 10px;
+}
+
+/* 日志 */
+.logs {
+    -fx-padding: 10px 20px;
+    -fx-spacing: 5;
+}
+
+.logs-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.logs-item {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bbe0ff;
+}
+
+.logs-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bbe0ff;
+    -fx-padding: 5px 0 0 0;
+}
+
+/* 快捷工具 */
+.ktool {
+    -fx-padding: 10px 20px;
+}
+
+.ktool-item {
+    -fx-background-color: transparent;
+    -fx-content-display: graphic-only;
+    -fx-cursor: hand;
+}
+
+.ktool-item .label {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
+
+.ktool-item1 {
+    -fx-background-image: url("../img/ktoolBg1.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.ktool-item1:hover {
+    -fx-background-image: url("../img/ktoolBg1-act.png");
+}
+
+.ktool-item2 {
+    -fx-background-image: url("../img/ktoolBg2.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.ktool-item2:hover {
+    -fx-background-image: url("../img/ktoolBg2-act.png");
+}
+
+.ktool-item:hover .label {
+    -fx-text-fill: #0ff;
+}
+
+/* 房间视图的特定样式 */
+
+/* 蓝队标题 */
+.team-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #00d9ff;
+    -fx-pref-height: 40px;
+    -fx-padding: 0 15px;
+    -fx-background-color: #043766;
+    -fx-border-width: 0 0 0 5px;
+    -fx-border-color: #1f9fe4;
+    -fx-alignment: center-left;
+}
+
+/* 红队标题 */
+.team-title-red {
+    -fx-text-fill: #ff6363;
+    -fx-background-color: rgba(90, 42, 42, 0.7);
+    -fx-border-color: #e41f1f;
+}
+
+/* 队伍主要区域 */
+.team-main {
+    -fx-padding: 0 0 10px 0;
+}
+
+/* 队伍分组 */
+.team-group {
+    -fx-spacing: 10;
+}
+
+/* 队伍按钮区域 */
+.team-btn {
+    -fx-padding: 0 0 10px 0;
+    -fx-spacing: 10;
+}
+
+/* 操作按钮 */
+.btn {
+    -fx-pref-width: 126px;
+    -fx-pref-height: 45px;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+}
+
+.btnStart {
+    -fx-background-image: url("../img/btnStart.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.btnInvite {
+    -fx-background-image: url("../img/btnInvite.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.btnQuit {
+    -fx-background-image: url("../img/btnQuit.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+/* 聊天区域 */
+.chatting {
+    -fx-background-color: rgba(4, 22, 51, 0.5);
+    -fx-border-color: #106097;
+    -fx-border-width: 1px;
+    -fx-padding: 15px;
+    -fx-spacing: 10;
+    -fx-pref-height: 160px;
+}
+
+.chat-text-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.chat-text-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.chat-text {
+    -fx-spacing: 5;
+}
+
+.chat-text Label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.chat-talk {
+    -fx-spacing: 10;
+}
+
+.chat-channel {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 30px;
+    -fx-background-color: #115DC1;
+    -fx-padding: 0 10px;
+}
+
+.chat-channel Label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.chat-talk .text-field {
+    -fx-pref-height: 30px;
+    -fx-background-color: #043059;
+    -fx-border-color: #14588c;
+    -fx-border-width: 1px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 0 10px;
+}
+
+.chat-send {
+    -fx-pref-width: 88px;
+    -fx-pref-height: 30px;
+    -fx-background-image: url("../img/btn-send.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.chat-send Label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+/* 表单样式 */
+.form {
+    -fx-padding: 20px;
+}
+
+.form-item {
+    -fx-spacing: 10;
+    -fx-padding: 0 0 10px 0;
+}
+
+.form-item Label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.form-item .text-field, .form-item .password-field {
+    -fx-background-color: #043059;
+    -fx-border-color: #14588c;
+    -fx-border-width: 1px;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+/* 表格样式 */
+.table-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.table-list .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-text-fill: white;
+}
+
+.table-list .table-row-cell:selected {
+    -fx-background-color: rgba(10, 139, 212, 0.4);
+}
+
+.table-list .table-column {
+    -fx-alignment: center;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.table-list .column-header {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../img/table-head.png");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+    -fx-padding: 5px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-border-color: transparent;
+}
+
+.table-list .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-alignment: center;
+}
+
+.table-list .table-row-cell {
+    -fx-background-image: url("../img/table-row.png");
+    -fx-background-size: stretch;
+    -fx-background-repeat: no-repeat;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 0 4px;
+    -fx-border-style: solid;
+    -fx-border-color: #00eaff;
+    -fx-padding: 5px;
+}
+
+.table-list .table-row-cell .table-cell {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: center;
+    -fx-border-color: transparent;
+}
+
+.table-list .status {
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-padding: 1px 5px;
+    -fx-background-image: url("../img/status.png");
+    -fx-background-size: 100% 100%;
+    -fx-background-repeat: no-repeat;
+}
+
+.table-list .status.status-started {
+    -fx-background-image: url("../img/status-started.png");
+}
+
+/* 删除按钮 */
+.btn-del {
+    -fx-pref-width: 81px;
+    -fx-pref-height: 33px;
+    -fx-font-size: 12px;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-background-image: url("../img/btn-del.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-cursor: hand;
+}
+
+/* 下拉框样式 */
+.combo-box {
+    -fx-background-color: #115DC1;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #115DC1;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #043766;
+    -fx-border-color: #106097;
+    -fx-border-width: 1px;
+}
+
+.combo-box .list-view .list-cell:hover {
+    -fx-background-color: #1f9fe4;
+    -fx-text-fill: white;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: white;
+}
